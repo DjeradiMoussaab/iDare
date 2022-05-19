@@ -9,7 +9,7 @@ let usersService = class usersService {
         });
     }
 
-    createUser(user) {
+    createUser(user, hash, salt) {
         return User.create({
             username: user.username,
             firstName: user.firstName,
@@ -19,6 +19,8 @@ let usersService = class usersService {
             nbFollowing: 0,
             nbPosts: 0,
             photoURL: user.photoURL,
+            hash: hash,
+            salt: salt,
         });
     }
 
